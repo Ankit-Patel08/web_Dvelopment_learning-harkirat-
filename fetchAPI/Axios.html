@@ -12,7 +12,7 @@
     <script>
         async function getRecentPosts() {                
             const response = await axios.get("https://jsonplaceholder.typicode.com/posts")   // axios .post or anything in a single line 
-            document.getElementById("posts").innerHTML = response.data.title;     // here the response.data contains the final data not the response   it have some more functionality like response.status , response.header  etc 
+            document.getElementById("posts").innerHTML = response.data.title;     // here the response.data contains the final data not the response object it have some more functionality like response.status , response.header  etc 
         }
         getRecentPosts();
     </script>
@@ -22,5 +22,5 @@
 /*
 this axios automatically convert the file into the json no need of manual work 
 
-axios.get()  -> it give the promise 
+axios.get()  -> it give the promise   // this is like fetch
 */
