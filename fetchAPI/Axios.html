@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>  // this is like  reqire("axios") in node 
+</head>
+<body>
+    Linkedin
+    <div id="posts"></div>
+    <script>
+        async function getRecentPosts() {                
+            const response = await axios.get("https://jsonplaceholder.typicode.com/posts")   // axios .post or anything in a single line 
+            document.getElementById("posts").innerHTML = response.data.title;     // here the response.data contains the final data not the response   it have some more functionality like response.status , response.header  etc 
+        }
+        getRecentPosts();
+    </script>
+</body>
+</html>
+
+/*
+this axios automatically convert the file into the json no need of manual work 
+
+axios.get()  -> it give the promise 
+*/
