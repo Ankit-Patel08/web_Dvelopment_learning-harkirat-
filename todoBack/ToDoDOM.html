@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .task{
+            display: flex;
+            border: 2px solid;
+            border-radius: 4px;
+            justify-content: space-between;
+            padding: 8px;
+            margin: 5px;
+
+        }
+        .task button{
+            flex: 00 auto;
+            width: auto;
+            padding: 5px,10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <h4> 1.Take the lecture</h4>
+
+    <div id="taskContainer"> </div>
+
+    <input id="taskInput" type="text" placeholder="Add your tasks">
+    <button onclick="addtask()">Add task</button>
+
+
+    <script>
+        function addtask(){
+            const tasktext = document.getElementById("taskInput").value.trim();
+            if(tasktext ==="" || tasktext === " ") return;
+
+            const taskdiv = document.createElement("div");
+            taskdiv.className = "task";
+
+            const taskheading = document.createElement("h4");
+            taskheading.textContent = tasktext;
+
+            const deletebtn = document.createElement("button");
+            deletebtn.textContent = "Delete";
+            deletebtn.onclick = function() {
+                taskdiv.remove();
+            }
+
+            taskdiv.appendChild(taskheading);
+            taskdiv.appendChild(deletebtn);
+
+            document.getElementById("taskContainer").appendChild(taskdiv);
+            document.getElementById("taskInput").value = "";
+
+        }
+
+        function deleteTask(button){
+
+        }
+
+    </script>
+</body>
+</html>
