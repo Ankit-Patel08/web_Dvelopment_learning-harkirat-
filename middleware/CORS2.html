@@ -1,0 +1,17 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
+    <script>
+        function sendRequest(){
+            axios.post("http://localhost:3000/sum",{              // taking to the different domain 
+                a:document.getElementById("a").value,           // it will take the value from input 
+                b:document.getElementById("b").value
+            })
+        }
+    </script>
+</head>
+<body>
+    <input id="a" type="text" placeholder="First value">
+    <input id="b" type="text" placeholder="second value">
+
+    <button onclick="sendRequest()">find Sum</button>
+</body>
