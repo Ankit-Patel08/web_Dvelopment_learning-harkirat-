@@ -50,13 +50,18 @@ app.post("/sigin", function(req, res){
      }
 })
 
+/*
+Use req when you want to pass information between middlewares and route handlers during the processing of a request.
+Use res when you want to send information back to the client.
+*/
+
 
 function auth(req, res, next) {
   const token = req.header.token;
   const decodedData = jwt.verify(token, JWT_SECRET);
 
   if (decodedData.username) {
-    req.username = decodedData.username;   // passing the username to the function
+    req.username = decodedData.username;   // passing the username to the next function so that other function can use this username 
     next();
   } else {
     res.json({
@@ -71,7 +76,7 @@ app.get("/me",auth, function (req, res) {
   const decodedInformation = jwt.verify(token, JWT_SECRET);   
                                                          
      const username = decodedInformation.username;                                                   
-  let foundUser = user.find((u) => u.username === req.username);   // here req.username because we have passed the value of username in the middleware and it is telling about the current user whihc is asking for the me 
+  let foundUser = user.find((u) => u.username === req.username);   // here req.username because we have passed the value of username in the middleware and it is telling about the current user which is asking for the me 
  
   if (foundUser) {                        
     res.json({

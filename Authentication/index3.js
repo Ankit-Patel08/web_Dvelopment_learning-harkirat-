@@ -9,9 +9,9 @@ app.use(express.json());   // this will help the json body
 
 const user = [];
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "SignUpInpage", "index.html"));
-});
+app.get("/", function(req, res) {                            // i am sending the frontend from the backend otherwise we have to host it somewhere
+  res.sendFile(path.join(__dirname, "SignUpInpage", "index.html")); // and sending it to the user when first it came with no path just dashboard
+});                                                              // __dirname  -> hold the current directory 
 
 
 app.post("/signup", function(req,res){

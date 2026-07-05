@@ -19,7 +19,7 @@
          
           (encoding, decoding is different from encryption and dicription)
             in encryption you can't get the decripted value without the key 
-            but in incpding and decoding you can get the dicripted data without the use of SECRET_KEY 
+            but in incpding and decoding you can get the decrypted data without the use of SECRET_KEY 
               here we are just finding the data but to varify we need the SECRET_KEY
 
     varification step of JWT 

@@ -20,7 +20,7 @@
             });
             alert("You are signed up"); 
         }
-    async   function Signin(){      
+     async   function Signin(){      
             
           const username = document.getElementById("signin-username").value;
             const password = document.getElementById("signin-password").value;
@@ -31,15 +31,15 @@
             });
 
             localStorage.setItem("token",response.data.token);  // we are storing the token in the local storage which is given by the backend
-
+                                                                 // this localStorage is the built in function provided by the node  
             alert("You are signed in"); 
             getUserInfo();
         }
 
-    async function getUserInfo(){
+     async function getUserInfo(){
         const response = await axios.get("http://localhost:3000/me",{
             headers:{
-                token:localStorage.getItem("token")      // we are getting the token from the local storage which stored by the backend previously
+                token:localStorage.getItem("token")      // we are getting the token from the local storage which stored by the backend
             }
          })
          document.getElementById("information").innerHTML = "Username: " + response.data.username +"password: " + response.data.password;
