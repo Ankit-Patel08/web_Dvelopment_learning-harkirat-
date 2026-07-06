@@ -12,7 +12,7 @@ setInterval(() => {
 }, 1000);
 
 // Middleware
-function rateLimiter(req, res, next) {
+function rateLimiter(req, res, next) {       
   const userId = req.query.id;
 
   if (!userId) {
@@ -34,7 +34,7 @@ function rateLimiter(req, res, next) {
     });
   }
 
-  next();
+  next();        // this next tell that the authentication is verified and now you can access the function  
 }
 
 // Apply globally

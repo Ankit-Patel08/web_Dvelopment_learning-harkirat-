@@ -32,3 +32,7 @@ app.get("/ride2", function(req, res){
 })
 
 app.listen(3000);  
+
+
+// req.hostname    -> gives the url from where the request came 
+// req.url      ->    gives the route from where the request came

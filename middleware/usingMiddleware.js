@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-function isOldEnoughMiddleware(req, res,next) {
+function isOldEnoughMiddleware(req, res,next) {  // now this will have this 3 argumentss
                                                 // this is a middleware function that will check if the age of the person is more than 14 or not
   const age = Number(req.query.age);                        // so this is how we can use the middleware function in our code and we can use it in multiple routes as well
   
