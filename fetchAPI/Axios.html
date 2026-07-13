@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>  // this is like  reqire("axios") in node 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>  // this is like  reqire("axios") in node and this way in the html page 
 </head>
 <body>
     Linkedin
@@ -20,7 +20,39 @@
 </html>
 
 /*
-this axios automatically convert the file into the json no need of manual work 
+npm install axios in bash,        
+const axios = require("axios");  or    import axios from "axios";   in the node 
+
+this axios automatically convert the file into the json no need of manual work  
+and also converts JSON into a JavaScript object.  when it get response from the get method 
+
+
+const response = await axios.get(url, {    this is how the headers are send
+    headers: {
+        Authorization: "Bearer abc123"
+    }
+});
+
+
+const response = await fetch("url",{       // This is how the get is send in the Fetch
+    method:"GET"
+})
+
+
+
+Why do many developers like Axios?
+
+With Fetch:
+
+const response = await fetch(url);
+const data = await response.json();
+
+With Axios:
+
+const response = await axios.get(url);   // automatically JSON handling
+const data = response.data;
+
+
 
 axios.get()  -> it give the promise   // this is like fetch
 */
