@@ -2,18 +2,6 @@ const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
 
-async function connectDB(){
-try {
-   await mongoose.connect(process.env.MONGO_URL); 
-   console.log("databse connected");
-}catch(err){
-console.log("Database connection failed");
-console.log(err.message);
-}
-}
-connectDB();
-
-
 const ObjectId = mongoose.ObjectId;
 
 const UserSchema =  new schema({
