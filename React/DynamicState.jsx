@@ -8,7 +8,7 @@ export default function DynamicState() {
     }
     return(
         <div>
-            <button id="btn" onClick={onClickHandler}>count : {count} </button>
+            <button onClick={onClickHandler}>count : {count} </button>
         </div>
     )
 }
