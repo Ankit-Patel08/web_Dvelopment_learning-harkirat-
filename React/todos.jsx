@@ -1,8 +1,8 @@
 import {useState} from "react";
 
-export default function todos(){
+export default function Todos(){
 
-    const [todos, setodos] = useState([{
+    const [todos, setTodos] = useState([{
         title : "Go to gym",
         description : "Go to the gym daily",
         done : false
@@ -15,7 +15,7 @@ export default function todos(){
             description:document.getElementById("description").value,
             done:"true"
         })
-        setodos(oldTodos);
+        setTodos(oldTodos);
     }
      
     return(
@@ -25,6 +25,18 @@ export default function todos(){
             <br />
             <button onClick={addTodo}>Add todo</button>
             <br />
+            {JSON.stringify(todos)}
         </div>
+    );
+}
+
+function Todo(props){
+    return(
+        <div>
+            <h1>{props.title}</h1>
+            <p>{props.description}</p>
+            <p>{props.done ? " Task is Done" : " Task is Not Done"}</p>
+        </div>
+        
     );
 }
